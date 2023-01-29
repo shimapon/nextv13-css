@@ -36,6 +36,12 @@ export default function Home() {
           <li>flexbox gap</li>
           <li>@container</li>
         </div>
+        <a
+          href="#about"
+          className="p-2 rounded border block my-2 hover:bg-gray-900"
+        >
+          scroll-behaviorへ遷移
+        </a>
         <h3 className="mt-4 text-xl">Grid</h3>
         <div className="grid grid-cols-3 gap-4">
           <div className="col-span-1 card">1</div>
@@ -50,7 +56,7 @@ export default function Home() {
           <div className="card col-span-1 row-span-1">10</div>
         </div>
         <h3 className="mt-4 text-xl">writing mode</h3>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-3 gap-2">
           <p style={{ writingMode: "vertical-rl" }} className="card h-40">
             色は匂へど 散りぬるを 我が世誰そ 常ならむ 有為の奥山 今日越えて
             浅き夢見じ 酔ひもせず
@@ -59,10 +65,33 @@ export default function Home() {
             色は匂へど 散りぬるを 我が世誰そ 常ならむ 有為の奥山 今日越えて
             浅き夢見じ 酔ひもせず
           </p>
+          <p style={{ writingMode: "vertical-lr" }} className="card h-40">
+            色は匂へど 散りぬるを 我が世誰そ 常ならむ 有為の奥山 今日越えて
+            浅き夢見じ 酔ひもせず
+          </p>
         </div>
 
         <h3 className="mt-4 text-xl">varuable fonts</h3>
         <p className="textAnimation">hello world</p>
+
+        <h3 id="about" className="mt-4 text-xl">
+          scroll-behavior
+        </h3>
+
+        <div className=" text-[#939393] text-center font-bold text-xl p-32 bg-gray-700 border rounded border-gray-700 mt-2">
+          scroll-behavior Area <br />
+          HTML に scroll-smoothを設定するとぬるりと動く
+        </div>
+        <footer>
+          <a
+            className="rounded p-2 bg-gray-900 text-gray-300 block my-2"
+            href="https://github.com/shimapon/nextv13-css"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            githubソース
+          </a>
+        </footer>
       </main>
     </>
   );
