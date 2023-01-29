@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .card {
+    @apply bg-gray-300 rounded p-2;
+  }
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
