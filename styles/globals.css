@@ -4,7 +4,7 @@
 
 @layer components {
   .card {
-    @apply bg-gray-300 rounded p-2;
+    @apply bg-gray-600 rounded p-2;
   }
 }
 
@@ -114,4 +114,15 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.textAnimation {
+  font-size: 48px;
+  font-variation-settings: "wght" 400, "wdth" 50, "GRAD" 1;
+  animation: width-animation 1s ease infinite alternate;;
+}
+
+@keyframes width-animation {
+  from { font-variation-settings: "wght" 400, "wdth" 50, "GRAD" 1; }
+  to   { font-variation-settings: "wght" 400, "wdth" 151, "GRAD" 1; }
 }
