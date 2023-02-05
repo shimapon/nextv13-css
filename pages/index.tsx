@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Contents from "./Contents";
+import Contents from "components/Contents";
+import DarkModeButton from "components/DarkModeButton";
 
 export default function Home() {
   return (
@@ -10,36 +11,31 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="p-8 text-left md:w-1/2 mx-auto bg-gray-800 border-gray-700 border shadow-inner">
-        <h1 className="text-5xl">CSSで遊ぶ</h1>
-        <div className="flex gap-2 mt-3">
-          <div className="px-2 py-1 rounded-xl bg-gray-600 text-sm border">
-            Next v13
+      <main className="p-8 text-left md:w-1/2 mx-auto border-gray-700 border shadow-inner bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-50">
+        <div className="grid grid-cols-4 items-center">
+          <div className="col-span-3">
+            <h1 className="text-5xl">CSSで遊ぶ</h1>
+            <div className="flex gap-2 mt-3">
+              <div className="px-2 py-1 rounded-xl bg-gray-600 text-sm border">
+                Next v13
+              </div>
+              <div className="px-2 py-1 rounded-xl bg-gray-600 text-sm border">
+                tailwind
+              </div>
+            </div>
           </div>
-          <div className="px-2 py-1 rounded-xl bg-gray-600 text-sm border">
-            tailwind
+          <div className="col-span-1 mr-0 ml-auto">
+            <DarkModeButton />
           </div>
         </div>
 
         <h2 className="text-2xl mt-4">TODO</h2>
         <div className="card">
-          <li>ダークモード</li>
-          <li>クラス名共通化</li>
-          <li>github</li>
-        </div>
-        <h2 className="text-2xl mt-4">トレンド</h2>
-        <div className="card">
-          <li>subgrid</li>
-          <li>writing modes</li>
-          <li>css logical propeties</li>
-          <li>aspect-ratio</li>
-          <li>content-visibility</li>
-          <li>flexbox gap</li>
-          <li>@container</li>
+          <li>trend</li>
         </div>
         <a
           href="#scroll-behavior"
-          className="p-2 rounded border block my-2 md:hover:bg-gray-900"
+          className="p-2 rounded border block my-2 md:dark:hover:bg-gray-900 md:hover:bg-gray-200"
         >
           scroll-behaviorへ遷移
         </a>
@@ -82,7 +78,7 @@ export default function Home() {
         <Contents title="scroll-behavior">
           <div
             id="scroll-behavior"
-            className=" text-[#939393] text-center font-bold text-xl px-4 py-16 bg-gray-700 border rounded border-gray-700 mt-2"
+            className=" text-[#939393] text-center font-bold text-xl px-4 py-16 bg-gray-300 dark:bg-gray-700 border rounded dark:border-gray-700 mt-2"
           >
             scroll-behavior Area <br />
             HTML に scroll-smoothを設定するとぬるりと動く
@@ -91,12 +87,12 @@ export default function Home() {
 
         <footer>
           <a
-            className="rounded p-2 bg-gray-900 text-gray-300 block my-2"
+            className="rounded p-2 bg-gray-700 text-gray-300 block my-2"
             href="https://github.com/shimapon/nextv13-css"
             target="_blank"
             rel="noreferrer noopener"
           >
-            githubソース
+            {">"} githubソース
           </a>
         </footer>
       </main>
