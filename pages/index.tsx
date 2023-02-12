@@ -98,13 +98,14 @@ export default function Home() {
         </Contents>
 
         <Contents title="scroll-snap-type">
-          <div className="snap-x flex overflow-x-auto md:w-2/3 w-full gap-2 mx-auto border-4 dark:border-gray-100 rounded">
+          <div className="snap-x snap-mandatory flex overflow-x-auto md:w-2/3 w-full gap-2 mx-auto border-4 dark:border-gray-100 rounded">
             <div className="snap-center min-w-fit">
               <Image
                 src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
                 width={320}
                 height={160}
                 alt=""
+                className="snap-center min-w-fit"
               />
             </div>
             <div className="snap-center min-w-fit">
