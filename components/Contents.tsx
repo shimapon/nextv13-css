@@ -9,7 +9,7 @@ const Contents: React.FC<Props> = ({ title, children }) => {
   return (
     <>
       <h3 className="mt-4 text-xl">{title}</h3>
-      {children}
+      <div className="mt-2"> {children}</div>
     </>
   );
 };

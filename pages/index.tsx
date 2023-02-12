@@ -2,6 +2,7 @@ import Head from "next/head";
 import Contents from "components/Contents";
 import DarkModeButton from "components/DarkModeButton";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -81,7 +82,7 @@ export default function Home() {
         <Contents title="scroll-behavior">
           <div
             id="scroll-behavior"
-            className=" text-[#939393] text-center font-bold text-xl px-4 py-16 bg-gray-300 dark:bg-gray-700 border rounded dark:border-gray-700 mt-2"
+            className=" text-[#939393] text-center font-bold text-xl px-4 py-16 bg-gray-300 dark:bg-gray-700 border rounded dark:border-gray-700"
           >
             scroll-behavior Area <br />
             HTML に scroll-smoothを設定するとぬるりと動く
@@ -94,6 +95,59 @@ export default function Home() {
               ページへ
             </div>
           </Link>
+        </Contents>
+
+        <Contents title="scroll-snap-type">
+          <div className="snap-x flex overflow-x-auto md:w-2/3 w-full gap-2 mx-auto border-4 dark:border-gray-100 rounded">
+            <div className="snap-center min-w-fit">
+              <Image
+                src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+                width={320}
+                height={160}
+                alt=""
+              />
+            </div>
+            <div className="snap-center min-w-fit">
+              <Image
+                src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+                width={320}
+                height={160}
+                alt=""
+              />
+            </div>
+            <div className="snap-center min-w-fit">
+              <Image
+                src="https://images.unsplash.com/photo-1622890806166-111d7f6c7c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+                width={320}
+                height={160}
+                alt=""
+              />
+            </div>
+            <div className="snap-center min-w-fit">
+              <Image
+                src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+                width={320}
+                height={160}
+                alt=""
+              />
+            </div>
+            <div className="snap-center min-w-fit">
+              <Image
+                src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+                width={320}
+                height={160}
+                alt=""
+              />
+            </div>
+            <div className="snap-center min-w-fit">
+              <Image
+                src="https://images.unsplash.com/photo-1559333086-b0a56225a93c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+                width={320}
+                height={160}
+                alt=""
+              />
+            </div>
+          </div>
         </Contents>
 
         <footer>
