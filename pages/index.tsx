@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Contents from "components/Contents";
 import DarkModeButton from "components/DarkModeButton";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -30,12 +31,14 @@ export default function Home() {
         </div>
 
         <h2 className="text-2xl mt-4">TODO</h2>
-        <div className="card">
-          <li>trend</li>
-        </div>
+        <ul className="dark:border-white border-gray-700 border rounded p-2">
+          <li>state of CSS trend</li>
+          <li>アップルやテスラのWebレイアウト再現テクニック集</li>
+        </ul>
+
         <a
           href="#scroll-behavior"
-          className="p-2 rounded border block my-2 md:dark:hover:bg-gray-900 md:hover:bg-gray-200"
+          className="p-2 rounded border block my-4 md:dark:hover:bg-gray-900 md:hover:bg-gray-200"
         >
           scroll-behaviorへ遷移
         </a>
@@ -85,9 +88,17 @@ export default function Home() {
           </div>
         </Contents>
 
+        <Contents title="sticky">
+          <Link href={"sticky"}>
+            <div className="rounded p-2 bg-gray-700 text-gray-300 block my-2">
+              ページへ
+            </div>
+          </Link>
+        </Contents>
+
         <footer>
           <a
-            className="rounded p-2 bg-gray-700 text-gray-300 block my-2"
+            className="rounded p-2 bg-gray-700 text-gray-300 block my-4"
             href="https://github.com/shimapon/nextv13-css"
             target="_blank"
             rel="noreferrer noopener"
