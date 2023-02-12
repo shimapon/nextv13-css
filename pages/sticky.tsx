@@ -18,7 +18,7 @@ const Sticky: React.FC = () => {
         width={1080}
         height={618}
       />
-      <div style={{ height: "200vh" }}>
+      <div style={{ height: "140vh" }}>
         <Image
           className="sticky top-0 object-contain w-full"
           src="https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Ff9ca7731e2a140dda63aaa8177a392ab"
