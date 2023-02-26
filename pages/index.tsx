@@ -3,6 +3,7 @@ import Contents from "components/Contents";
 import DarkModeButton from "components/DarkModeButton";
 import Link from "next/link";
 import Image from "next/image";
+import {} from "util/logic";
 
 export default function Home() {
   return (
@@ -18,10 +19,10 @@ export default function Home() {
           <div className="col-span-3">
             <h1 className="text-5xl">CSSで遊ぶ</h1>
             <div className="flex gap-2 mt-3">
-              <div className="px-2 py-1 rounded-xl bg-gray-600 text-sm border">
+              <div className="px-2 py-1 rounded-xl dark:bg-gray-800 dark:text-gray-50 text-sm border">
                 Next v13
               </div>
-              <div className="px-2 py-1 rounded-xl bg-gray-600 text-sm border">
+              <div className="px-2 py-1 rounded-xl dark:bg-gray-800 dark:text-gray-50 text-sm border">
                 tailwind
               </div>
             </div>
@@ -89,7 +90,7 @@ export default function Home() {
           </div>
         </Contents>
 
-        <Contents title="sticky">
+        <Contents title="sticky(挙動不安定)">
           <Link href={"sticky"}>
             <div className="rounded p-2 bg-gray-700 text-gray-300 block my-2">
               ページへ
@@ -99,55 +100,83 @@ export default function Home() {
 
         <Contents title="scroll-snap-type">
           <div className="snap-x snap-mandatory flex overflow-x-auto md:w-2/3 w-full gap-2 mx-auto border-4 dark:border-gray-100 rounded">
-            <div className="snap-center min-w-fit">
-              <Image
-                src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
-                width={320}
-                height={160}
-                alt=""
-                className="snap-center min-w-fit"
-              />
+            {[
+              "https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80",
+              "https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80",
+              "https://images.unsplash.com/photo-1622890806166-111d7f6c7c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80",
+              "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80",
+              "https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80",
+              "https://images.unsplash.com/photo-1559333086-b0a56225a93c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80",
+            ].map((url: string, index: number) => {
+              return (
+                <div
+                  className="snap-center min-w-fit"
+                  key={index + "scroll-snap-image"}
+                >
+                  <Image
+                    src={url}
+                    width={320}
+                    height={160}
+                    alt=""
+                    className="snap-center min-w-fit"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </Contents>
+
+        <Contents title="responsive design">
+          <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+            <div className="md:flex">
+              <div className="md:flex-shrink-0">
+                <Image
+                  className="h-36 w-full object-cover md:h-full md:w-48"
+                  src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
+                  alt=""
+                  width={320}
+                  height={160}
+                />
+              </div>
+              <div className="p-4">
+                <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                  Case study
+                </div>
+                <a
+                  href="#"
+                  className="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+                >
+                  Finding customers for your new business
+                </a>
+                <p className="mt-2 text-gray-500">
+                  Getting a new business off the ground is a lot of hard work.
+                  Here are five ideas you can use to find your first customers.
+                </p>
+              </div>
             </div>
-            <div className="snap-center min-w-fit">
-              <Image
-                src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
-                width={320}
-                height={160}
-                alt=""
-              />
-            </div>
-            <div className="snap-center min-w-fit">
-              <Image
-                src="https://images.unsplash.com/photo-1622890806166-111d7f6c7c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
-                width={320}
-                height={160}
-                alt=""
-              />
-            </div>
-            <div className="snap-center min-w-fit">
-              <Image
-                src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
-                width={320}
-                height={160}
-                alt=""
-              />
-            </div>
-            <div className="snap-center min-w-fit">
-              <Image
-                src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
-                width={320}
-                height={160}
-                alt=""
-              />
-            </div>
-            <div className="snap-center min-w-fit">
-              <Image
-                src="https://images.unsplash.com/photo-1559333086-b0a56225a93c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"
-                width={320}
-                height={160}
-                alt=""
-              />
-            </div>
+          </div>
+        </Contents>
+
+        <Contents title="content-visibility">
+          <p className="text-gray-300">
+            autoに設定することによって指定した要素がビューポートに表示されるまで、レンダリングを実行しない。
+          </p>
+          <Image
+            src={
+              "https://images.unsplash.com/photo-1520262494112-9fe481d36ec3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            }
+            width={414}
+            height={621}
+            alt=""
+            className="mt-2"
+            style={{ contentVisibility: "auto" }}
+          />
+        </Contents>
+
+        <Contents title="blend-mode">
+          <div className="flex justify-center -space-x-14 bg-white p-2">
+            <div className="mix-blend-multiply bg-blue-400 rounded-full w-32 h-32"></div>
+            <div className="mix-blend-multiply bg-pink-400 rounded-full w-32 h-32"></div>
           </div>
         </Contents>
 
