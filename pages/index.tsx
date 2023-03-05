@@ -31,13 +31,11 @@ export default function Home() {
             <DarkModeButton />
           </div>
         </div>
-
         <h2 className="text-2xl mt-4">TODO</h2>
-        <ul className="dark:border-white border-gray-700 border rounded p-2">
+        <ul className="dark:border-white border-gray-700 border rounded p-2 list-disc pl-5 marker:text-red-400">
           <li>state of CSS trend</li>
           <li>アップルやテスラのWebレイアウト再現テクニック集</li>
         </ul>
-
         <a
           href="#scroll-behavior"
           className="p-2 rounded border block my-4 md:dark:hover:bg-gray-900 md:hover:bg-gray-200"
@@ -58,7 +56,6 @@ export default function Home() {
             <div className="card col-span-1 row-span-1">10</div>
           </div>
         </Contents>
-
         <Contents title="writing mode">
           <div className="grid grid-cols-3 gap-2 text-sm h-44">
             <p style={{ writingMode: "vertical-rl" }} className="card">
@@ -75,11 +72,9 @@ export default function Home() {
             </p>
           </div>
         </Contents>
-
         <Contents title="varuable fonts">
           <p className="textAnimation">hello world</p>
         </Contents>
-
         <Contents title="scroll-behavior">
           <div
             id="scroll-behavior"
@@ -89,7 +84,6 @@ export default function Home() {
             HTML に scroll-smoothを設定するとぬるりと動く
           </div>
         </Contents>
-
         <Contents title="sticky(挙動不安定)">
           <Link href={"sticky"}>
             <div className="rounded p-2 bg-gray-700 text-gray-300 block my-2">
@@ -97,7 +91,6 @@ export default function Home() {
             </div>
           </Link>
         </Contents>
-
         <Contents title="scroll-snap-type">
           <div className="snap-x snap-mandatory flex overflow-x-auto md:w-2/3 w-full gap-2 mx-auto border-4 dark:border-gray-100 rounded">
             {[
@@ -125,7 +118,6 @@ export default function Home() {
             })}
           </div>
         </Contents>
-
         <Contents title="responsive design">
           <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div className="md:flex">
@@ -156,7 +148,6 @@ export default function Home() {
             </div>
           </div>
         </Contents>
-
         <Contents title="content-visibility">
           <p className="text-gray-300">
             autoに設定することによって指定した要素がビューポートに表示されるまで、レンダリングを実行しない。
@@ -172,14 +163,47 @@ export default function Home() {
             style={{ contentVisibility: "auto" }}
           />
         </Contents>
-
         <Contents title="blend-mode">
           <div className="flex justify-center -space-x-14 bg-white p-2">
             <div className="mix-blend-multiply bg-blue-400 rounded-full w-32 h-32"></div>
             <div className="mix-blend-multiply bg-pink-400 rounded-full w-32 h-32"></div>
           </div>
         </Contents>
-
+        <Contents title="filters">
+          <div className="gap-2 grid-cols-4 grid p-3 bg-gray-100">
+            {[
+              "",
+              "blur-sm",
+              "brightness-125	",
+              "contrast-125",
+              "drop-shadow-xl",
+              "grayscale",
+              "hue-rotate-90",
+              "invert",
+              "saturate-200",
+              "sepia",
+            ].map((classText) => {
+              return (
+                <Image
+                  src={
+                    "https://images.unsplash.com/photo-1525351326368-efbb5cb6814d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                  }
+                  width={400}
+                  height={400}
+                  alt=""
+                  className={classText}
+                />
+              );
+            })}
+          </div>
+        </Contents>
+        <Contents title="::marker">
+          <ul role="list" className="marker:text-sky-400 list-disc pl-5">
+            <li>5 cups chopped Porcini mushrooms</li>
+            <li>1/2 cup of olive oil</li>
+            <li>3lb of celery</li>
+          </ul>
+        </Contents>
         <footer>
           <a
             className="rounded p-2 bg-gray-700 text-gray-300 block my-4"
